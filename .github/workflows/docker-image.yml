@@ -25,11 +25,11 @@ jobs:
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
 
-    - name: Build and push multi-architecture Docker image
+    - name: Build and push Chrome Docker image
       uses: docker/build-push-action@v2
       with:
         context: ./chrome
         file: ./chrome/Dockerfile
         push: true
         platforms: linux/amd64  # Specify the target platforms
-        tags: chrome:latest
+        tags: cluelesstechnologist99/chrome:latest 
