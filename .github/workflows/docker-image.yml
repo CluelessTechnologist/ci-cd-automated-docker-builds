@@ -1,4 +1,4 @@
-name: Multi-Architecture Docker Build and Push
+name: Google Chrome Docker Build and Push
 
 on:
   workflow_dispatch:
@@ -31,5 +31,5 @@ jobs:
         context: ./chrome
         file: ./chrome/Dockerfile
         push: true
-        platforms: linux/amd64,linux/arm64,linux/arm/v7  # Specify the target platforms
+        platforms: linux/amd64  # Specify the target platforms
         tags: chrome:latest
