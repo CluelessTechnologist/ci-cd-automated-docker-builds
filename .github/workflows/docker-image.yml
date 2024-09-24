@@ -32,4 +32,12 @@ jobs:
         file: ./chrome/Dockerfile
         push: true
         platforms: linux/amd64  # Specify the target platforms
-        tags: cluelesstechnologist99/chrome:latest 
+        tags: cluelesstechnologist99/chrome:latest
+
+  workflow-keepalive:
+    if: github.event_name == 'schedule'
+    runs-on: ubuntu-latest
+    permissions:
+      actions: write
+    steps:
+      - uses: liskin/gh-workflow-keepalive@v1.2.1
